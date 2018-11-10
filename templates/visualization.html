@@ -1,0 +1,19 @@
+<h1>Here comes the trend</h1>
+
+<img src='{{link}}' alt='{{title}}' >
+
+<table border=1 style="width:60%" align=center>
+
+<tr>
+<th> student_name </th>
+<th> average </th>
+<th> attendance </th>
+</tr>
+
+<tr>
+{% for each in content %}
+<th> {{each}} </th>
+{% endfor %}
+</tr>
+
+</table>

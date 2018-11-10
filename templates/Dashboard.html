@@ -1,0 +1,50 @@
+<html>
+<head>
+<title> Dashboard Section </title>
+</head>
+<body align='center'>
+<h1> Visualisation Analysis</h1>
+<br>
+<h1>Query for latest update before submit</h1>
+<form action="/Dashboard/visualization",id='query'>
+<table border=1 style="width:60%" align=center>
+<tr>
+<th> Student Name </th>
+<th> Section </th>
+</tr>
+<tr>
+<th>
+<select name='Name(Dash)' >
+  <option value ='' selected disabled hidden>--choose one--</option>
+
+{% for each in content %}
+  <option value ={{each}}>{{each}}</option>
+{% endfor %}
+</select>
+</th>
+<th>
+<select name='Dash_Section' >
+<option value ='' selected disabled hidden>--choose one section--</option>
+<option value ='writing'>writing</option>
+<option value ='speaking'>speaking</option>
+<option value ='reading'>reading</option>
+<option value ='listening'>listening</option>
+</select>
+</th>
+
+</tr>
+</table>
+choose a starting date:<input type="date" name="start_date" value={{yesterday}} min="2017-01-01" max="2020-12-31" /><br>
+choose an ending date:<input type="date" name="end_date" value={{today}} min="2017-01-01" max="2020-12-31" /><br>
+
+<input type="submit" value="Show" /> 
+
+</form>
+
+<!-->
+<img src='{{ file_name }}' alt='{{file_name}}'>
+
+
+<!-->
+ </body>
+</html>

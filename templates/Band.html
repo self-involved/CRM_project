@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title> Upgrade Student Band </title>
+
+</head>
+
+<body>
+<br>
+<h1 style="color:Dodgerblue;text-align:center">Query for latest update before submit</h1>
+<form action="/Band/query",id='query'>
+<table border=1 style="width:60%" align=center>
+<tr>
+<th> Student Name </th>
+<th> Section </th>
+</tr>
+<tr>
+<th>
+<select name='Name(Query)' >
+  <option value ='' selected disabled hidden>--choose one--</option>
+
+{% for each in content %}
+  <option value ={{each}}>{{each}}</option>
+{% endfor %}
+</select>
+</th>
+<th>
+<select name='Section' >
+<option value ='' selected disabled hidden>--choose one section--</option>
+<option value ='writing'>writing</option>
+<option value ='speaking'>speaking</option>
+<option value ='reading'>reading</option>
+<option value ='listening'>listening</option>
+</select>
+</th>
+
+</tr>
+</table>
+<input type="submit" value="query" style="float:right;" /> 
+<br>
+</form>
+<hr>
+<hr>
+<p> Pls upgrade Writing Test </p>
+<form action="/Band/feedback_w",id='Writing'>
+<table border=1 style="width:60%" align=center>
+<tr>
+<th> Date </th>
+<th> Student Name </th>
+<th> Task </th>
+{% for each in Writing_Band %}
+<th> {{each}} </th>
+{% endfor %}
+</tr>
+
+<tr>
+
+<th>
+<input type="date" name="user_date(Writing)" value={{today}} min="2017-01-01" max="2020-12-31" />
+</th>
+<th>
+<select name='Name(Writing)' >
+  <option value ='' selected disabled hidden>--choose one--</option>
+
+{% for each in content %}
+  <option value ={{each}}>{{each}}</option>
+{% endfor %}
+</select>
+</th>
+<th>
+<select name='Task' >
+  <option value ='Task1'>Task1</option>
+  <option value ='Task2'>Task2</option>
+</select>
+</th>
+
+{% for B in Writing_Band %}
+<th>
+<select name = {{B}}>
+  <option value ='6.0' selected >6.0</option>
+{% for i in Band %}
+  <option value ={{i}}>{{i}}</option>
+{% endfor %}
+</th>
+{% endfor %}
+
+</tr>
+</table>
+<input type="submit" value="click me" style="float:right;"/>
+
+</form>
+<br>
+<hr>
+<br>
+
+
+<p> Pls upgrade Speaking Test </p>
+<form action="/Band/feedback_s",id='Speaking'>
+
+<table border=1 style="width:60%" align=center>
+<tr>
+<th> Date </th>
+<th> Student Name </th>
+
+{% for each in Speaking_Band %}
+<th> {{each}} </th>
+{% endfor %}
+</tr>
+
+<tr>
+
+<th>
+<input type="date" name="user_date(Speaking)" value={{today}} min="2017-01-01" max="2020-12-31" />
+</th>
+<th>
+<select name='Name(Speaking)' >
+  <option value ='' selected disabled hidden>--choose one--</option>
+
+{% for each in content %}
+  <option value ={{each}}>{{each}}</option>
+{% endfor %}
+</select>
+</th>
+
+
+{% for S in Speaking_Band %}
+<th>
+<select name = {{S}}>
+  <option value ='6.0' selected >6.0</option>
+{% for i in Band %}
+  <option value ={{i}}>{{i}}</option>
+{% endfor %}
+</th>
+{% endfor %}
+
+</tr>
+</table>
+<input type="submit" value="click here" style="float:right;" />
+
+</form>
+<br>
+<hr>
+
+
+<p> Pls upgrade Reading Test </p>
+<form action="/Band/feedback_r",id='Reading'>
+
+<table border=1 style="width:60%" align=center>
+<tr>
+<th> Date </th>
+<th> Student Name </th>
+<th> Number </th>
+</tr>
+
+<tr>
+
+<th>
+<input type="date" name="user_date(Reading)" value={{today}} min="2017-01-01" max="2020-12-31" />
+</th>
+<th>
+<select name='Name(Reading)' >
+  <option value ='' selected disabled hidden>--choose one--</option>
+
+{% for each in content %}
+  <option value ={{each}}>{{each}}</option>
+{% endfor %}
+</select>
+</th>
+
+<th>
+<select name ='Reading_number' multiple>
+{% for x in number %}
+  <option value ={{x}}>No.{{x}} is WRONG</option>
+{% endfor %}
+</th>
+
+</tr>
+</table>
+<input type="submit" value="confirm" style="float:right;"/> 
+<div align='center'>
+<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+</div>
+</form>
+<hr>
+<br>
+
+<p> Pls upgrade Listening Test </p>
+<form action="/Band/feedback_l",id='Listening'>
+
+<table border=1 style="width:60%" align=center>
+<tr>
+<th> Date </th>
+<th> Student Name </th>
+<th> Number </th>
+</tr>
+
+<tr>
+
+<th>
+<input type="date" name="user_date(Listening)" value={{today}} min="2017-01-01" max="2020-12-31" />
+</th>
+<th>
+<select name='Name(Listening)' >
+  <option value ='' selected disabled hidden>--choose one--</option>
+
+{% for each in content %}
+  <option value ={{each}}>{{each}}</option>
+{% endfor %}
+</select>
+</th>
+
+<th>
+<select name ='Listening_number' multiple>
+{% for x in number %}
+  <option value ={{x}}>No.{{x}} is WRONG</option>
+{% endfor %}
+</th>
+
+</tr>
+</table>
+<input type="submit" value="chosen" style="float:right;"/> 
+<div align='center'>
+<p>Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.</p>
+</div>
+</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student information</title>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/to_center.css') }}"/>
+
+</head>
+<body>
+ 
+<h1>Student Registration</h1>
+<br>
+<p>Check Student Names </p>
+ 
+<input type="button" onclick="javascript:window.open('/Student/student_name') ">View Student</input>
+<div id="student_names"></p>
+ 
+<p>Input Student Information</p>
+<br>
+
+<form action='/Student/register'> 
+<!-- onsubmit = 'alert({{message}});return false;'>
+<!-->
+Pls input student name:
+<br>
+<input type='text' name='name' value='Student_name'>
+<br>
+<input type='submit' value='Submit'>
+</form>
+
+<br>
+
+
+
+
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540670688277&di=522af7e941fa45681fb07e1a8f25c186&imgtype=0&src=http%3A%2F%2Ferp.cntour365.com%2Fsystem%2Fattachments%2Fcountry%2F7dd862c956ad00%2F201308121608360.jpg" alt="WOW" >
+</body>
+</html>
+ 

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<title>TP Home Page</title>
+ 
+</head>
+<body">
+<style>
+.centre {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+ 
+.clock {
+   font-family: sans-serif;
+   border: thin solid;
+   border-radius: 10px;
+   padding: 5px;
+}
+ 
+</style>
+<h1 style="color:Dodgerblue;text-align:center"><b>Welcome to CRM system of TriangularPlus.Corp.,Ltd..</b></h1>
+ 
+<p style="color:violet;text-align:center">Sponsored by Dior,Executed by Summer,Forced by Iris </p>
+<br>
+ 
+ 
+<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2386851461,4168093204&fm=26&gp=0.jpg" width="200" height="220" alt="Professioanal Organization" class="centre">
+ 
+<div >
+<ul style="text-align:center;">
+<br>
+<b>
+<li><a href="/Student">Student Registration Page</a>  </li>
+<br>
+<li><a href="/Band">Student Band page</a>  </li>
+<br>
+<li><a href="/Dashboard">Band Dashboard</a> </li>
+</b>
+ 
+</ul>
+</div>
+ 
+<script type="text/javascript">
+ 
+const clocks = document.getElementsByClassName("clock");
+ 
+function updateClocks() {
+  for (let clock of clocks) {
+    let timezone = clock.dataset.timezone;
+    let time = new Date().toLocaleTimeString("en-US", {
+      year:'2-digit',
+      month:'2-digit',      
+      day:'2-digit',
+      hour: '2-digit',
+      minute:'2-digit',
+      timeZone: timezone
+    });
+    clock.textContent = time;
+  }
+}
+ 
+ 
+setInterval(updateClocks, 50);
+updateClocks();
+ 
+ 
+</script>
+ 
+<p style="text-align:right;"><b style="background-color:darkgray; ">WorldClock:</b> Melbourne: <span class="clock" data-timezone="Australia/Melbourne"></span></p>
+<p style="text-align:right;">Shanghai: <span class="clock" data-timezone="Asia/Shanghai"></span></p>
+<p style="text-align:right;">Vancouver: <span class="clock" data-timezone="Canada/Pacific"></span></p>
+<p style="text-align:right;">Liverpool: <span class="clock" data-timezone="Europe/London"></span></p>
+ 
+ 
+</body>
+ 
+<address>
+<br>
+<br>
+Visit us at:
+<a href="http://13.211.204.111/TriangularPlus.php">http://13.211.204.111/TriangularPlus.php</a> <br>
+Registered location:3-3-805, Ocean International Centre, 166 Taiping South Road, Qinhuai District, Nanjing
+<br>
+Maintained at:Glen Waverley, 3150
+Australia 
+ 
+<footer>
+<p>Posterd by : XIAO</p>
+<p>Contact :M 0401639666 E xiao.jin8610@gmail.com</p>
+<p>powered by: AWS </p>
+</footer>
+                              
+</html>
+ 
+ 
+ 
